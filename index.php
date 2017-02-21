@@ -8,7 +8,7 @@
 
 //dump($_SERVER['REDIRECT_URL']);
 $path = explode('/',$_SERVER['REDIRECT_URL']);
-//dump($path);
+var_dump($path);
 $users = ['0931123456'=>['Header'=>'HeaderA','email'=>'email_A','footer'=>'footer_A'],
           '0936041219'=>['Header'=>'HeaderB','email'=>'email_B','footer'=>'footer_B'],
           '0968063303'=>['Header'=>'HeaderC','email'=>'email_C','footer'=>'footer_C'],
