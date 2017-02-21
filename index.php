@@ -27,16 +27,16 @@ foreach ($users as $key =>$value ) {
 <br>
 
 <head>
-<?php echo $users[$path[2]]['Header']; ?>
+<?php echo $users[$path[1]]['Header']; ?>
 </head>
 <hr>
 <body style="bloder=2">
-<form action="/<?php echo $users[$path[2]]['email'] ?>">
-<label><?php echo $users[$path[2]]['email'] ?></label>
+<form action="/<?php echo $users[$path[1]]['email'] ?>">
+<label><?php echo $users[$path[1]]['email'] ?></label>
 </form>
 </body>
 <hr>
 <footer>
-<?php echo $users[$path[2]]['footer']; ?>
+<?php echo $users[$path[1]]['footer']; ?>
 </footer>
  </html>
