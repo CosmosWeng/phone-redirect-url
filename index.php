@@ -1,9 +1,9 @@
 <?php
-use Tracy\Debugger as TracyDebugger;
-require_once __DIR__ . '/vendor/autoload.php';
-TracyDebugger::$maxDepth = 10;
-TracyDebugger::$maxLen = 500;
-TracyDebugger::enable();
+// use Tracy\Debugger as TracyDebugger;
+// require_once __DIR__ . '/vendor/autoload.php';
+// TracyDebugger::$maxDepth = 10;
+// TracyDebugger::$maxLen = 500;
+// TracyDebugger::enable();
 
 
 //dump($_SERVER['REDIRECT_URL']);
