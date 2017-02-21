@@ -5,6 +5,7 @@ TracyDebugger::$maxDepth = 10;
 TracyDebugger::$maxLen = 500;
 TracyDebugger::enable();
 
+
 //dump($_SERVER['REDIRECT_URL']);
 $path = explode('/',$_SERVER['REDIRECT_URL']);
 //dump($path);
