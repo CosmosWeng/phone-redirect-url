@@ -5,8 +5,9 @@
 // TracyDebugger::$maxLen = 500;
 // TracyDebugger::enable();
 
-var_dump($_SERVER['REDIRECT_URL']);
+//var_dump($_SERVER['REDIRECT_URL']);
 $path = explode('/',$_SERVER['REDIRECT_URL']);
+array_shift($path);
 // array_splice($path,array_search('',$path),1);
 // array_splice($path,array_search('phone',$path),1);
 var_dump($path);
