@@ -1,42 +1,35 @@
 <?php
-// use Tracy\Debugger as TracyDebugger;
-// require_once __DIR__ . '/vendor/autoload.php';
-// TracyDebugger::$maxDepth = 10;
-// TracyDebugger::$maxLen = 500;
-// TracyDebugger::enable();
-
+use Tracy\Debugger as TracyDebugger;
+require_once __DIR__ . '/vendor/autoload.php';
+TracyDebugger::$maxDepth = 10;
+TracyDebugger::$maxLen = 500;
+TracyDebugger::enable();
 
 //dump($_SERVER['REDIRECT_URL']);
 $path = explode('/',$_SERVER['REDIRECT_URL']);
-//var_dump($path);
-$users = ['0931123456'=>['Header'=>'HeaderA','email'=>'email_A','footer'=>'footer_A'],
-          '0936041219'=>['Header'=>'HeaderB','email'=>'email_B','footer'=>'footer_B'],
-          '0968063303'=>['Header'=>'HeaderC','email'=>'email_C','footer'=>'footer_C'],
-          '0911384217'=>['Header'=>'HeaderD','email'=>'email_D','footer'=>'footer_D'],
-          '0934783647'=>['Header'=>'HeaderE','email'=>'email_E','footer'=>'footer_E']
-         ];
+array_splice($path,array_search('',$path),1);
+array_splice($path,array_search('phone',$path),1);
+dump($path);
+$header = 'Header-' .$path[0];
+$footer = 'footer-' .$path[1];
+$email = $path[0] . '@gmail.com';
+
+$users = [ $path[0] =>[$path[1] => ['Header'=>$header,'email'=>$email,'footer'=>$footer]]];
+dump($users);
  ?>
+
  <html>
+ <body>
 <?php
-foreach ($users as $key =>$value ) {
-    echo "<a href='./".$key."'>" . $key .'</a>&nbsp;&nbsp;';
+$arr = ['0931123456','0968112233','0982456789'];
+$brr = ['a','b','c'];
+
+foreach ($arr as $key => $value) {
+  echo '<br>';
+  foreach ($brr as $k => $v) {
+      echo "<a href='../".$value.'/'.$brr[$key].($k+1)."'>". $value.'/'.$brr[$key].($k+1) .'.php'."</a>&nbsp;&nbsp;";
+  }
 }
  ?>
-<br>
-<br>
-<br>
-
-<head>
-<?php echo $users[$path[1]]['Header']; ?>
-</head>
-<hr>
-<body style="bloder=2">
-<form action="/<?php echo $users[$path[1]]['email'] ?>">
-<label><?php echo $users[$path[1]]['email'] ?></label>
-</form>
-</body>
-<hr>
-<footer>
-<?php echo $users[$path[1]]['footer']; ?>
-</footer>
+ </body>
  </html>
