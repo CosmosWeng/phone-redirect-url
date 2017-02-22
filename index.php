@@ -1,21 +1,21 @@
 <?php
-use Tracy\Debugger as TracyDebugger;
-require_once __DIR__ . '/vendor/autoload.php';
-TracyDebugger::$maxDepth = 10;
-TracyDebugger::$maxLen = 500;
-TracyDebugger::enable();
+// use Tracy\Debugger as TracyDebugger;
+// require_once __DIR__ . '/vendor/autoload.php';
+// TracyDebugger::$maxDepth = 10;
+// TracyDebugger::$maxLen = 500;
+// TracyDebugger::enable();
 
 //dump($_SERVER['REDIRECT_URL']);
 $path = explode('/',$_SERVER['REDIRECT_URL']);
 array_splice($path,array_search('',$path),1);
 array_splice($path,array_search('phone',$path),1);
-dump($path);
+var_dump($path);
 $header = 'Header-' .$path[0];
 $footer = 'footer-' .$path[1];
 $email = $path[0] . '@gmail.com';
 
 $users = [ $path[0] =>[$path[1] => ['Header'=>$header,'email'=>$email,'footer'=>$footer]]];
-dump($users);
+var_dump($users);
  ?>
 
  <html>
